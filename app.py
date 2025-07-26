@@ -7,10 +7,13 @@ st.set_page_config(
 
 st.title("Bienvenida a StoryQ 🔮")
 
-# --- Cambio Principal ---
-# Ahora usamos tu nueva imagen de portada.
 # Asegúrate de que el archivo se llame 'portada.png' en tu carpeta.
-st.image("portada.png") # <<< ¡Esta es la línea que cambiamos!
+# Si usas el tablero para la portada de StoryQ, el archivo podría ser 'tablero.jpg'
+try:
+    st.image("portada.png") 
+except Exception:
+    st.warning("Asegúrate de tener un archivo 'portada.png' en tu repositorio.")
+
 
 st.header("Somos las historias que contamos")
 st.write(
@@ -22,3 +25,17 @@ st.write(
     **Usa el menú de la izquierda para navegar por las diferentes herramientas.**
     """
 )
+
+# --- MÓDULO DE APOYO ---
+# Este código añade la sección en la barra lateral.
+st.sidebar.markdown("---")
+st.sidebar.header("Apoya este Proyecto")
+st.sidebar.write(
+    """
+    ¿Te ha gustado StoryQ? 
+    Tu apoyo me ayuda a seguir creando y mejorando más juegos educativos y creativos.
+    
+    ¡Gracias por tu generosidad!
+    """
+)
+st.sidebar.link_button("Invítame un café ☕", "https://coff.ee/regifreyman8")
